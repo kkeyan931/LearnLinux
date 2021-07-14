@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>LearnLinux</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">
+    <meta name="author" content="karthik">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"
+        integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+
+</head>
+
+<body>
+
+    <header class="header text-center">
+
+        <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Learn Linux</a></h1>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="navigation" class="collapse navbar-collapse flex-column">
+                <div class="profile-section pt-3 pt-lg-0">
+                    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/linusTorvalds.jpg" alt="image">
+
+                    <div class="bio mb-3">Hi, Iam Karthik.I am a linux lover and I love to explore various linux
+                        Distros. In this Blog You can find tech news, linux distros installation, Application suggestion
+                        and many more.<br><a href="about.html">Find out more about me</a></div>
+
+                    <ul class="social-list list-inline py-3 mx-auto">
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-instagram fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/karthi-kn-2976b2194/"><i
+                                    class="fab fa-linkedin-in fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="https://github.com/kkeyan931"><i
+                                    class="fab fa-github-alt fa-fw"></i></a></li>
+                    </ul>
+                    <hr>
+                </div>
+
+                <ul class="navbar-nav flex-column text-left">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog
+                            Post</a>
+                    </li>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+
+        <article class="blog-post px-3 py-5 p-md-5">
+            <div class="container">
+                <header class="blog-post-header">
+                    <h2 class="title mb-2">How to Create Ubuntu Live USB in Windows
+                    </h2>
+                </header>
+
+                <div class="blog-post-body">
+                    <figure class="blog-banner">
+                        <img class="img-fluid" src="assets/images/bootableUSB/penDrive.jpg" alt="image">
+
+                    </figure>
+                    <p>Before you start creating the bootable USB, let’s see the essentials first.
+
+                        <b>Create bootable USB.</b>
+                    </p>
+
+
+                    <h4>Make sure that you have the following:</h4>
+                    <ol class="mb-5">
+                        <li class="mb-2">A USB key (pen drive) with at least 4 GB of size with no important data on it
+                            (the USB key will be formatted)</li>
+                        <li class="mb-2">Internet connection to download Ubuntu ISO (this could be done on any computer)
+                        </li>
+                        <li class="mb-2"> It would be a good idea to know if your system uses MBR or GPT (Rufus will
+                            create live USB accordingly)
+                        </li>
+                    </ol>
+                    <p> Let’s see the steps TO Create Bootable USB.</p>
+
+
+
+
+
+
+                    <h5>Step 1: Download Ubuntu ISO</h5>
+                    <p>ISO is basically an image file. You download this single file of around 2.4 GB and it consists of
+                        an “image” of Ubuntu Linux. You then use a tool to extract the content of the ISO file in a such
+                        a manner that you can boot the Ubuntu operating system from the USB itself. Go to the Ubuntu
+                        website and choose the version of your choice <a href="https://ubuntu.com/#download">ubuntu
+                            website</a> You may choose Ubuntu LTS if you do not want to
+                        upgrade your system every six to nine months.
+                    </p>
+
+                    <img class="img-fluid" src="assets/images/bootableUSB/ubuntuWebSite.png" alt="image">
+
+
+
+                    <h5>Step 2: Make a live Ubuntu USB with Rufus</h5>
+
+                    <p>Rufus is an excellent free and open source tool for making bootable Linux USB disks. On Windows,
+                        I prefer and recommend using Rufus.</p>
+
+                    <h5>Download Rufus</h5>
+                    <p>Go to the website of Rufus and download the .exe file: <a href="https://rufus.ie/en/">rufus</a>
+                    </p>
+
+                    <img class="img-fluid" src="assets/images/bootableUSB/rufusPenDrive.png" alt="image">
+
+                    <h5>Creating the live Ubuntu USB</h5>
+
+                    <p>Plug in your USB key (pen drive) to the computer. Now double click on the download Rufus exe file
+                        which should be in the Downloads folder.</p>
+
+                    <p>When you run Rufus with the USB plugged in, it automatically recognizes it. If there are more
+                        than one USB keys plugged in, please ensure to select the correct USB under Device.</p>
+
+                    <p> may also automatically find the Ubuntu ISO. If not, you can always browse to the ISO by clicking
+                        on the SELECT button.</p>
+
+                    <p>I hope you have checked the partitioning scheme and BIOS type as I mentioned in the prerequisite
+                        section. Based on that, select the Partition Scheme and Target System in Rufus.</p>
+
+                    <p>Everything looks good? Hit the START button.</p>
+
+                    <img class="img-fluid" src="assets/images/bootableUSB/rufus.png" alt="image">
+
+                    <p>You may be asked to choose how to write the image. Choose ‘Write in ISO Image mode’:
+
+                    </p>
+                    <p>It will take a few minutes to complete the process. You’ll see a green signal when the live USB
+                        is ready.
+
+                    </p>
+
+                    <h5>How to boot from live Ubuntu USB</h5>
+                    <p>Once the live USB is created, you can proceed with testing Ubuntu in live mode. The bootable USB
+                        can be used on any system, not only on the one where you created it.</p>
+
+                    <p>Plug in the live USB on the desired computer. What you need to do is restart or power on your
+                        computer.</p>
+
+                    <p>At the screen that shows the logo of your system manufacturer, press the F2 or F10 or F12 key.
+                        You may try pressing all of them one by one if you are not sure of the key. But be quick when
+                        you do that otherwise it will boot into the operating system.</p>
+
+                    <p>This key is different for different brand of computers. Some may even use Esc or Del keys for
+                        this purpose.</p>
+
+                    <p>
+
+                        In the BIOS settings, normally, you should see a screen like this. Here, you use the arrow keys
+                        to move down to USB option and press enter to boot from the USB
+                    </p>
+
+        </article>
+
+        <footer class="footer text-center py-2 theme-bg-dark">
+
+            <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by
+                karthik</small>
+
+        </footer>
+
+    </div>
+
+    <div id="config-panel" class="config-panel d-none d-lg-block">
+        <div class="panel-inner">
+            <a id="config-trigger" class="config-trigger config-panel-hide text-center" href="#"><i
+                    class="fas fa-cog fa-spin mx-auto" data-fa-transform="down-6"></i></a>
+            <h5 class="panel-title">Choose Colour</h5>
+            <ul id="color-options" class="list-inline mb-0">
+                <li class="theme-1 active list-inline-item"><a data-style="assets/css/theme-1.css" href="#"></a></li>
+                <li class="theme-2  list-inline-item"><a data-style="assets/css/theme-2.css" href="#"></a></li>
+                <li class="theme-3  list-inline-item"><a data-style="assets/css/theme-3.css" href="#"></a></li>
+                <li class="theme-4  list-inline-item"><a data-style="assets/css/theme-4.css" href="#"></a></li>
+                <li class="theme-5  list-inline-item"><a data-style="assets/css/theme-5.css" href="#"></a></li>
+                <li class="theme-6  list-inline-item"><a data-style="assets/css/theme-6.css" href="#"></a></li>
+                <li class="theme-7  list-inline-item"><a data-style="assets/css/theme-7.css" href="#"></a></li>
+                <li class="theme-8  list-inline-item"><a data-style="assets/css/theme-8.css" href="#"></a></li>
+            </ul>
+            <a id="config-close" class="close" href="#"><i class="fa fa-times-circle"></i></a>
+        </div>
+    </div>
+
+
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <script src="assets/js/blog.js"></script>
+
+    <script src="assets/js/demo/style-switcher.js"></script>
+
+
+</body>
+
+</html>

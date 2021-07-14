@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>LearnLinux</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">
+    <meta name="author" content="karthik">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"
+        integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+
+</head>
+
+<body>
+
+    <header class="header text-center">
+
+        <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Learn Linux</a></h1>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="navigation" class="collapse navbar-collapse flex-column">
+                <div class="profile-section pt-3 pt-lg-0">
+                    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/linusTorvalds.jpg" alt="image">
+
+                    <div class="bio mb-3">Hi, Iam Karthik.I am a linux lover and I love to explore various linux
+                        Distros. In this Blog You can find tech news, linux distros installation, Application suggestion
+                        and many more.<br><a href="about.html">Find out more about me</a></div>
+
+                    <ul class="social-list list-inline py-3 mx-auto">
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-instagram fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/karthi-kn-2976b2194/"><i
+                                    class="fab fa-linkedin-in fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="https://github.com/kkeyan931"><i
+                                    class="fab fa-github-alt fa-fw"></i></a></li>
+                    </ul>
+                    <hr>
+                </div>
+
+                <ul class="navbar-nav flex-column text-left">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog
+                            Post</a>
+                    </li>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+
+        <article class="blog-post px-3 py-5 p-md-5">
+            <div class="container">
+                <header class="blog-post-header">
+                    <h2 class="title mb-2">How to Disable UEFI Secure Boot in Windows 10
+
+                    </h2>
+                </header>
+
+                <div class="blog-post-body">
+                    <figure class="blog-banner">
+                        <img class="img-fluid" src="assets/images/disableSecureBoot/secureBoot.jpg" alt="image">
+
+                    </figure>
+                    <p>These days, if you buy a computer pre-installed with Windows, it comes with UEFI boot system.
+                        UEFI is not something that Microsoft invented, instead it is a protocol existing even before
+                        Windows 8. Some Mac devices have been using UEFI for a longer time.<br><br>
+
+                        With UEFI comes the feature of “secure boot” which boots only those bootloaders that are signed
+                        in to UEFI firmware. This security feature prevents rootkit malware and provides an additional
+                        layer of security.<br><br>
+
+                        The downside of secure boot is that if you want to boot from a Linux USB or if you want to use a
+                        bootable Windows USB, it won’t allow that. Sometimes, it may also create problems in dual
+                        booting with Linux.<br><br>
+
+                        The good thing is that you can easily disable the secure boot. All you have to do is to access
+                        the UEFI firmware settings, go to the Boot option and disbale it.<br><br>
+
+                        Don’t worry. I won’t leave you hanging like that. Let me show the steps in detail.
+
+                    </p>
+
+
+                    <h4>Disabling UEFI secure boot in Windows 10
+                    </h4>
+
+
+                    <h5>Step 1: Access the UEFI settings
+                    </h5>
+                    <p>You may access the UEFI settings by powering on your system and using the F2/F10 or F12 keys at
+                        the boot time. If that doesn’t work, don’t worry. You can go to the firmware settings from
+                        within Windows as well. Here’s how.
+                        <br><br>
+                        Search for UEFI and go to Change advanced startup options in Windows menu.
+                    </p>
+
+                    <img class="img-fluid" src="assets/images/disableSecureBoot/startMenu.png" alt="image">
+
+                    <br><br>
+                    <p>Now, click on the Restart now button under Advanced startup option.
+                    </p>
+
+                    <br>
+
+                    <img class="img-fluid" src="assets/images/disableSecureBoot/reStartNow.png" alt="image">
+
+                    <br><br>
+                    <p>After a few seconds, you should see a blue screen with a few options to choose from. You have to
+                        click on Troubleshoot option.
+                    </p>
+                    <br>
+
+                    <img class="img-fluid" src="assets/images/disableSecureBoot/troubleshoot.jpg" alt="image">
+
+                    <br><br>
+                    <p>Now, some systems will give you the UEFI Firmware Settings on this screen. Some system may
+                        require you to choose an Advanced options.
+
+                        If you see the UEFI Firmware Settings option, well, click on it. Otherwise, click the Advanced
+                        options.
+                    </p>
+                    <br>
+
+                    <img class="img-fluid" src="assets/images/disableSecureBoot/advancedOption.jpg" alt="image">
+
+                    <br><br>
+                    <p>When you see the UEFI Firmware Settings, click on it.
+                    </p>
+                    <br>
+
+                    <img class="img-fluid" src="assets/images/disableSecureBoot/uefiFirmware.jpg" alt="image">
+
+
+
+                    <h5>Step 2: Disable secure boot in UEFI
+                    </h5>
+
+                    <p>By this time you must have been booted in to UEFI utility. You can change various settings here
+                        but all we want to do right now is to disable secure boot option here. <br><br>
+
+                        Move to Boot tab. Here, you’ll find Secure Boot option which is set to enabled.<br><br>
+
+                        Use the arrow key to go to Secure Boot option and then press enter to select it. Use + or – to
+                        change its value. Confirm it when prompted.<br><br>
+
+                        Press F10 to save the changes and exit the UEFI settings..</p>
+
+                    <img class="img-fluid" src="assets/images/disableSecureBoot/secureBootDisable.jpg" alt="image">
+
+
+
+        </article>
+
+        <footer class="footer text-center py-2 theme-bg-dark">
+
+            <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by
+                karthik</small>
+
+        </footer>
+
+    </div>
+
+    <div id="config-panel" class="config-panel d-none d-lg-block">
+        <div class="panel-inner">
+            <a id="config-trigger" class="config-trigger config-panel-hide text-center" href="#"><i
+                    class="fas fa-cog fa-spin mx-auto" data-fa-transform="down-6"></i></a>
+            <h5 class="panel-title">Choose Colour</h5>
+            <ul id="color-options" class="list-inline mb-0">
+                <li class="theme-1 active list-inline-item"><a data-style="assets/css/theme-1.css" href="#"></a></li>
+                <li class="theme-2  list-inline-item"><a data-style="assets/css/theme-2.css" href="#"></a></li>
+                <li class="theme-3  list-inline-item"><a data-style="assets/css/theme-3.css" href="#"></a></li>
+                <li class="theme-4  list-inline-item"><a data-style="assets/css/theme-4.css" href="#"></a></li>
+                <li class="theme-5  list-inline-item"><a data-style="assets/css/theme-5.css" href="#"></a></li>
+                <li class="theme-6  list-inline-item"><a data-style="assets/css/theme-6.css" href="#"></a></li>
+                <li class="theme-7  list-inline-item"><a data-style="assets/css/theme-7.css" href="#"></a></li>
+                <li class="theme-8  list-inline-item"><a data-style="assets/css/theme-8.css" href="#"></a></li>
+            </ul>
+            <a id="config-close" class="close" href="#"><i class="fa fa-times-circle"></i></a>
+        </div>
+    </div>
+
+
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <script src="assets/js/blog.js"></script>
+
+    <script src="assets/js/demo/style-switcher.js"></script>
+
+
+</body>
+
+</html>

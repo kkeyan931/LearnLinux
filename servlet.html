@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>LearnLinux</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">
+    <meta name="author" content="karthik">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"
+        integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+
+</head>
+
+<body>
+
+    <header class="header text-center">
+
+        <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Learn Linux</a></h1>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="navigation" class="collapse navbar-collapse flex-column">
+                <div class="profile-section pt-3 pt-lg-0">
+                    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/linusTorvalds.jpg" alt="image">
+
+                    <div class="bio mb-3">Hi, Iam Karthik.I am a linux lover and I love to explore various linux
+                        Distros. In this Blog You can find tech news, linux distros installation, Application suggestion
+                        and many more.<br><a href="about.html">Find out more about me</a></div>
+
+                    <ul class="social-list list-inline py-3 mx-auto">
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-instagram fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/karthi-kn-2976b2194/"><i
+                                    class="fab fa-linkedin-in fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="https://github.com/kkeyan931"><i
+                                    class="fab fa-github-alt fa-fw"></i></a></li>
+                    </ul>
+                    <hr>
+                </div>
+
+                <ul class="navbar-nav flex-column text-left">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog
+                            Post</a>
+                    </li>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+
+        <article class="blog-post px-3 py-5 p-md-5">
+            <div class="container">
+                <header class="blog-post-header">
+                    <h2 class="title mb-2">Run your First Servlet
+
+                    </h2>
+                </header>
+
+                <div class="blog-post-body">
+                    <figure class="blog-banner">
+                        <img class="img-fluid" src="assets/images/servlet/cover.png" alt="image">
+
+                    </figure>
+                    <h3>Introduction</h3>
+                    <p>
+                        Today we all are aware of the need of creating dynamic web pages i.e the ones which have the
+                        capability to change the site contents according to the time or are able to generate the
+                        contents according to the request received by the client.<br><br>
+                        If you like coding in Java, then you
+                        will be happy to know that using Java there also exists a way to generate dynamic web pages and
+                        that way is Java Servlet. But before we move forward with our topic let’s first understand the
+                        need for server-side extensions.<br><br>
+                        Servlets are the Java programs that runs on the Java-enabled web server or application server.
+                        They are used to handle the request obtained from the web server, process the request, produce
+                        the response, then send response back to the web server.
+
+                        <br>
+
+                    </p>
+
+                    <h4>Properties of Servlets</h4>
+                    <p>
+                    <ul>
+                        <li> Servlets work on the server-side.
+                        </li>
+                        <li> Servlets are capable of handling complex requests obtained from web server.
+                        </li>
+
+                    </ul>
+
+                    <h4>Execution of Servlets</h4>
+                    <p>Execution of Servlets involves six basic steps</p>
+
+                    <ul>
+                        <li>The clients send the request to the web server.</li>
+                        <li>The web server receives the request.</li>
+                        <li>The web server passes the request to the corresponding servlet.</li>
+                        <li>The servlet processes the request and generates the response in the form of output.</li>
+                        <li>The servlet sends the response back to the web server.</li>
+                        <li>The web server sends the response back to the client and the client browser displays it on
+                            the screen.</li>
+                    </ul>
+
+                    <img class="img-fluid" src="assets/images/servlet/servlerArch.jpg" alt="image">
+
+                    <h4>Six Steps to Running Your First Servlet</h4>
+
+
+                    <p>Once Tomcat is installed and configured, you can put it to work. Six steps take you from writing
+                        your servlet to running it. These steps are as follows:</p>
+
+                    <ol>
+                        <li>Create a directory structure under Tomcat for your application.</li>
+                        <li>Write the servlet source code. You need to import the javax.servlet package and the
+                            javax.servlet.http package in your source file.</li>
+                        <li>Compile your source code.</li>
+                        <li>Create a deployment descriptor.</li>
+                        <li>Run Tomcat.</li>
+                        <li>Call your servlet from a web browser.</li>
+                    </ol>
+
+                    <h4>Step 1: Create a Directory Structure under Tomcat</h4>
+
+                    <p>When you install Tomcat, several subdirectories are automatically created under the Tomcat home
+                        directory (%TOMCAT_HOME%). One of the subdirectories is webapps. The webapps directory is where
+                        you
+                        store your web applications. A web application is a collection of servlets and other contents
+                        installed under a specific subset of the server's URL namespace. A separate directory is
+                        dedicated
+                        for each servlet application. Therefore, the first thing to do when you build a servlet
+                        application
+                        is create an application directory. This section explains how to create a directory structure
+                        for an
+                        application called myApp.<br><br>
+
+                    <ol>
+                        <li>Create a directory called myApp under the webapps directory. The directory name is important
+                            because
+                            this also appears in the URL to your servlet.</li>
+
+                        <li>Create the src and WEB-INF directories under myApp, and create a directory named classes
+                            under
+                            WEB-INF. The src directory is for your
+                            source files,
+                            and the classes directory under WEB-INF is for your Java classes. If you have html files,
+                            you put
+                            them directly in the myApp directory. You also may want to create a directory called images
+                            under
+                            myApp for all your image files.</li>
+                    </ol>
+
+                    Note that the admin, ROOT, and examples directories are for applications created automatically when
+                    you install Tomcat.<br>
+                    </p>
+
+                    <h4>Step 2: Write the Servlet Source Code</h4>
+                    <p>
+                        In this step, you prepare your source code. You can write the source code yourself using your
+                        favorite text editor or copy the below code.<br><br>
+
+                        The code below shows a simple servlet called TestingServlet. The file, named
+                        TestingServlet.java, sends to the browser a few HTML tags and some text. For now, don't worry if
+                        you haven't got a clue about how it works.
+
+                    </p>
+
+                    <code>import javax.servlet.*;<br>
+                        import javax.servlet.http.*;<br>
+                        import java.io.*;<br>
+                        import java.util.*;<br><br>
+                        
+                        public class TestingServlet extends HttpServlet {<br><br>
+                        
+                         public void doGet(HttpServletRequest request, <br>
+                          HttpServletResponse response) <br>
+                          throws ServletException, IOException {<br>
+                          
+                          PrintWriter out = response.getWriter();<br>
+                          out.println("&lt;HTML&gt;");<br>
+                          out.println("&lt;HEAD&gt;");<br>
+                          out.println("&lt;TITLE&gt;Servlet Testing&lt;/TITLE&gt;");<br>
+                          out.println("&lt;HEAD&gt;");<br>
+                          out.println("&lt;BODY&gt;");<br>
+                          out.println("Welcome to the Servlet Testing Center");<br>
+                          out.println("&lt;/BODY&gt;");<br>
+                          out.println("&lt;/HTML&gt;");<br>
+                         }
+                        }<br>
+                    </code><br><br>
+
+                    <p>Now, save your TestingServlet.java file to the src subdirectory under myApp. You actually can
+                        place the source files anywhere; however, it is always a good idea to be organized by storing
+                        all your source code files in the src directory.
+
+                    </p>
+
+                    <h4>Step 3: Compile Your Source Code</h4>
+                    <p>
+                        For your servlet source code to compile, you need to include in your CLASSPATH environment
+                        variable the path to the servlet.jar file</p>
+
+                    <p>If you are using Linux/UNIX, the command is<br><br>
+
+                        <code>$ javac -d ../WEB-INF/classes/ TestingServlet.java</code><br><br>
+                        The -d option specifies where to place the generated class files. The command also assumes that
+                        you have placed the JDK's bin directory in the path so you can call any program in it from any
+                        directory.
+
+                    </p>
+
+                    <h4>Step 4: Create the Deployment Descriptor</h4>
+                    <p>
+                        A deployment descriptor is an optional component in a servlet application, taking the form of an
+                        XML document called web.xml. The descriptor must be located in the WEB-INF directory of the
+                        servlet application. When present, the deployment descriptor contains configuration settings
+                        specific to that application. Deployment descriptors are discussed in detail in Chapter 16.
+                        "Application Deployment."<br><br>
+
+                        For this step, you now need to create a web.xml file and place it under the WEB-INF directory
+                        under myApp.<br><br>
+
+                        The web.xml for this example application must have the following content.<br><br>
+
+                    </p>
+
+                    <code>
+                        &lt;!DOCTYPE web-app
+                        PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+                        "http://java.sun.com/dtd/web-app_2_3.dtd"&gt;<br>
+                       
+                       &lt;web-app&gt;<br>
+                        &lt;servlet&gt;<br>
+                         &lt;servlet-name&gt;Testing&lt;/servlet-name&gt;<br>
+                         &lt;servlet-class&gt;TestingServlet&lt;/servlet-class&gt;<br>
+                        &lt;/servlet&gt;<br>
+                       &lt;/web-app&gt;<br>
+                    </code>
+                    <br><br>
+
+                    <p>The web.xml file has one element: web-app. You should write all your servlets under
+                        &lt;web-app&gt;.
+                        For each servlet, you have a &lt;servlet&gt; element and you need the servlet-name and
+                        &lt;servlet-class&gt; elements. The servlet-name is the name for your servlet, by which
+                        it is known to Tomcat. The servlet-class is the compiled file of your
+                        servlet without the .class extension.</p>
+
+
+                    <h4>Step 5: Call Your Servlet from a Web Browser</h4>
+                    <p>
+                        You are ready to call your servlet from a web browser. By default, Tomcat runs on port 8080 in
+                        myApp virtual directory under the servlet subdirectory. The servlet that you just wrote is named
+                        Testing. The URL for that servlet has the following format:<br><br>
+
+                        <code>http://domain-name/virtual-directory/servlet/servlet-name</code><br><br>
+                        If you run the web browser from the same computer as Tomcat, you can replace domain-name with
+                        localhost. Therefore, the URL for your servlet would be
+                        <code>http://localhost:8080/myApp/servlet/Testing.</code><br><br>
+
+                        In the deployment descriptor you wrote in Step 4, you actually mapped the servlet class file
+                        called TestingServlet with the name "Testing" so that your servlet can be called by specifying
+                        its class file (TestingServlet) or its name (Testing). Without a deployment descriptor, your
+                        servlet must be called by specifying its class name; that is, TestingServlet. This means that if
+                        you had not written a deployment descriptor in Step 4, you would have to use the following URL
+                        to call your servlet:<br><br>
+
+                        <code>http://localhost:8080/myApp/servlet/TestingServlet </code><br><br>
+                        Typing the URL in the Address or Location box of your web browser will give you the string
+                        "Welcome to the Servlet Testing Center,"
+                    </p>
+
+
+
+        </article>
+
+        <footer class="footer text-center py-2 theme-bg-dark">
+
+            <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by
+                karthik</small>
+
+        </footer>
+
+    </div>
+
+    <div id="config-panel" class="config-panel d-none d-lg-block">
+        <div class="panel-inner">
+            <a id="config-trigger" class="config-trigger config-panel-hide text-center" href="#"><i
+                    class="fas fa-cog fa-spin mx-auto" data-fa-transform="down-6"></i></a>
+            <h5 class="panel-title">Choose Colour</h5>
+            <ul id="color-options" class="list-inline mb-0">
+                <li class="theme-1 active list-inline-item"><a data-style="assets/css/theme-1.css" href="#"></a></li>
+                <li class="theme-2  list-inline-item"><a data-style="assets/css/theme-2.css" href="#"></a></li>
+                <li class="theme-3  list-inline-item"><a data-style="assets/css/theme-3.css" href="#"></a></li>
+                <li class="theme-4  list-inline-item"><a data-style="assets/css/theme-4.css" href="#"></a></li>
+                <li class="theme-5  list-inline-item"><a data-style="assets/css/theme-5.css" href="#"></a></li>
+                <li class="theme-6  list-inline-item"><a data-style="assets/css/theme-6.css" href="#"></a></li>
+                <li class="theme-7  list-inline-item"><a data-style="assets/css/theme-7.css" href="#"></a></li>
+                <li class="theme-8  list-inline-item"><a data-style="assets/css/theme-8.css" href="#"></a></li>
+            </ul>
+            <a id="config-close" class="close" href="#"><i class="fa fa-times-circle"></i></a>
+        </div>
+    </div>
+
+
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <script src="assets/js/blog.js"></script>
+
+    <script src="assets/js/demo/style-switcher.js"></script>
+
+
+</body>
+
+</html>

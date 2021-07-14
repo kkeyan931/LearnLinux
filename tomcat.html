@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>LearnLinux</title>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blog">
+    <meta name="author" content="karthik">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    <script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"
+        integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/monokai-sublime.min.css">
+
+    <link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+
+</head>
+
+<body>
+
+    <header class="header text-center">
+
+        <h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Learn Linux</a></h1>
+
+        <nav class="navbar navbar-expand-lg navbar-dark">
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+                aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div id="navigation" class="collapse navbar-collapse flex-column">
+                <div class="profile-section pt-3 pt-lg-0">
+                    <img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/linusTorvalds.jpg" alt="image">
+
+                    <div class="bio mb-3">Hi, Iam Karthik.I am a linux lover and I love to explore various linux
+                        Distros. In this Blog You can find tech news, linux distros installation, Application suggestion
+                        and many more.<br><a href="about.html">Find out more about me</a></div>
+
+                    <ul class="social-list list-inline py-3 mx-auto">
+                        <li class="list-inline-item"><a href="#"><i class="fab fa-instagram fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/karthi-kn-2976b2194/"><i
+                                    class="fab fa-linkedin-in fa-fw"></i></a></li>
+                        <li class="list-inline-item"><a href="https://github.com/kkeyan931"><i
+                                    class="fab fa-github-alt fa-fw"></i></a></li>
+                    </ul>
+                    <hr>
+                </div>
+
+                <ul class="navbar-nav flex-column text-left">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span
+                                class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="blog-list.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog
+                            Post</a>
+                    </li>
+            </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="main-wrapper">
+
+        <article class="blog-post px-3 py-5 p-md-5">
+            <div class="container">
+                <header class="blog-post-header">
+                    <h2 class="title mb-2">Tomcat in Ubuntu
+
+                    </h2>
+                </header>
+
+                <div class="blog-post-body">
+                    <figure class="blog-banner">
+                        <img class="img-fluid" src="assets/images/tomcat/cover.jpg" alt="image">
+
+                    </figure>
+                    <h3>Introduction</h3>
+                    <p>
+                        Apache Tomcat is a web server and servlet container that is used to serve Java applications.
+                        Tomcat is an open source implementation of the Java Servlet and JavaServer Pages technologies,
+                        released by the Apache Software Foundation. This tutorial covers the basic installation and some
+                        configuration of the latest release of Tomcat 8 on your Ubuntu<br><br>
+
+
+                    </p>
+
+                    <h4>Step 1: Install Java</h4>
+                    <p>
+                        Tomcat requires Java to be installed on the server so that any Java web application code can be
+                        executed. We can satisfy that requirement by installing OpenJDK with apt-get.<br><br>
+
+                        First, update your apt-get package index:<br><br>
+
+                        <code>$ sudo apt-get update</code> <br><br>
+
+                        Then install the Java Development Kit package with apt-get:<br><br>
+
+                        <code>$ sudo apt-get install default-jdk</code> <br><br>
+
+                        Now that Java is installed, we can create a tomcat user, which will be used to run the Tomcat
+                        service.
+
+                    </p>
+
+                    <img class="img-fluid" src="assets/images/tomcat/javaInstall.png" alt="image">
+
+                    <br><br>
+
+                    <h4>Step 2: Create Tomcat User</h4>
+                    <p>
+
+                        For security purposes, Tomcat should be run as an unprivileged user (i.e. not root). We will
+                        create a new user and group that will run the Tomcat service.<br><br>
+
+                        First, create a new tomcat group:
+
+                        <code>$ sudo groupadd tomcat</code><br><br>
+
+                        Next, create a new tomcat user. We’ll make this user a member of the tomcat group, with a home
+                        directory of /opt/tomcat (where we will install Tomcat), and with a shell of /bin/false (so
+                        nobody can log into the account):<br><br>
+
+                        <code>$ sudo useradd -s /bin/false -g tomcat -d /opt/tomcat tomcat</code><br><br>
+
+                        Now that our tomcat user is set up, let’s download and install Tomcat.
+
+                    </p>
+
+                    <h4>Step 3: Install Tomcat</h4>
+                    <p>
+
+                        The best way to install Tomcat 8 is to download the latest binary release then configure it
+                        manually.<br><br>
+
+                        Find the latest version of Tomcat 8 at the Tomcat 8 Downloads page. At the time of writing, the
+                        latest version is 8.5.5, but you should use a later stable version if it is available. Under the
+                        Binary Distributions section, then under the Core list, copy the link to the “tar.gz”.<br><br>
+
+                        Next, change to the /tmp directory on your server. This is a good directory to download
+                        ephemeral items, like the Tomcat tarball, which we won’t need after extracting the Tomcat
+                        contents:<br><br>
+
+                        <code>$ cd /tmp</code><br><br>
+
+                        Use curl to download the link that you copied from the Tomcat website:<br><br>
+
+                        <code>curl -O http://apache.mirrors.ionfish.org/tomcat/tomcat-8/v8.5.5/bin/apache-tomcat-8.5.5.tar.gz</code><br><br>
+
+                        We will install Tomcat to the /opt/tomcat directory. Create the directory, then extract the
+                        archive to it with these commands:<br><br>
+
+                        <code>$ sudo mkdir /opt/tomcat <br>
+                              $ sudo tar xzvf apache-tomcat-8*tar.gz -C /opt/tomcat --strip-components=1</code><br><br>
+
+                        Next, we can set up the proper user permissions for our installation.
+                    </p>
+
+                    <h4>Step 4: Update Permissions</h4>
+                    <p>
+                        The tomcat user that we set up needs to have access to the Tomcat installation. We’ll set that up now.<br><br>
+                        
+                        Change to the directory where we unpacked the Tomcat installation:<br><br>
+                        
+                        <code>$ cd /opt/tomcat</code><br><br>
+                         
+                        Give the tomcat group ownership over the entire installation directory:<br><br>
+                        
+                        <code>$ sudo chgrp -R tomcat /opt/tomcat</code><br><br>
+                         
+                        Next, give the tomcat group read access to the conf directory and all of its contents, and execute access to the directory itself:<br><br>
+                        
+                        <code>$ sudo chmod -R g+r conf<br>
+                              $ sudo chmod g+x conf</code><br><br>
+                         
+                        Make the tomcat user the owner of the webapps, work, temp, and logs directories:<br><br>
+                        
+                        <code>$ sudo chown -R tomcat webapps/ work/ temp/ logs/</code><br><br>
+                         
+                        Now that the proper permissions are set up.<br><br>
+                        
+                        </p>
+
+
+
+        </article>
+
+        <footer class="footer text-center py-2 theme-bg-dark">
+
+            <small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by
+                karthik</small>
+
+        </footer>
+
+    </div>
+
+    <div id="config-panel" class="config-panel d-none d-lg-block">
+        <div class="panel-inner">
+            <a id="config-trigger" class="config-trigger config-panel-hide text-center" href="#"><i
+                    class="fas fa-cog fa-spin mx-auto" data-fa-transform="down-6"></i></a>
+            <h5 class="panel-title">Choose Colour</h5>
+            <ul id="color-options" class="list-inline mb-0">
+                <li class="theme-1 active list-inline-item"><a data-style="assets/css/theme-1.css" href="#"></a></li>
+                <li class="theme-2  list-inline-item"><a data-style="assets/css/theme-2.css" href="#"></a></li>
+                <li class="theme-3  list-inline-item"><a data-style="assets/css/theme-3.css" href="#"></a></li>
+                <li class="theme-4  list-inline-item"><a data-style="assets/css/theme-4.css" href="#"></a></li>
+                <li class="theme-5  list-inline-item"><a data-style="assets/css/theme-5.css" href="#"></a></li>
+                <li class="theme-6  list-inline-item"><a data-style="assets/css/theme-6.css" href="#"></a></li>
+                <li class="theme-7  list-inline-item"><a data-style="assets/css/theme-7.css" href="#"></a></li>
+                <li class="theme-8  list-inline-item"><a data-style="assets/css/theme-8.css" href="#"></a></li>
+            </ul>
+            <a id="config-close" class="close" href="#"><i class="fa fa-times-circle"></i></a>
+        </div>
+    </div>
+
+
+    <script src="assets/plugins/jquery-3.3.1.min.js"></script>
+    <script src="assets/plugins/popper.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
+
+    <script src="assets/js/blog.js"></script>
+
+    <script src="assets/js/demo/style-switcher.js"></script>
+
+
+</body>
+
+</html>

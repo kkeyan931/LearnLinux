@@ -1,89 +1,218 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.7.1/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.7.1/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.7.1/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.7.1/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.7.1/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.7.1/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.7.1/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.7.1/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.7.1/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.7.1/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+	<title>LearnLinux</title>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Blog">
+	<meta name="author" content="Karthikn">
+	<link rel="shortcut icon" href="favicon.ico">
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+	<script defer src="https://use.fontawesome.com/releases/v5.7.1/js/all.js"
+		integrity="sha384-eVEQC9zshBn0rFj4+TU78eNA19HMNigMviK/PU/FFjLXqa/GKPgX58rvt5Z8PLs7"
+		crossorigin="anonymous"></script>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+	<!-- Theme CSS -->
+	<link id="theme-style" rel="stylesheet" href="assets/css/theme-1.css">
+
+</head>
+
+<body>
+
+	<header class="header text-center">
+		<h1 class="blog-name pt-lg-4 mb-0"><a href="index.html">Learn Linux</a></h1>
+
+		<nav class="navbar navbar-expand-lg navbar-dark">
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
+				aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div id="navigation" class="collapse navbar-collapse flex-column">
+				<div class="profile-section pt-3 pt-lg-0">
+					<img class="profile-image mb-3 rounded-circle mx-auto" src="assets/images/linusTorvalds.jpg"
+						alt="image">
+
+					<div class="bio mb-3">Hi, Iam Karthik.I am a linux lover and I love to explore various linux
+						Distros. In this Blog You can find tech news, linux distros installation, Application suggestion
+						and many more <br><a href="about.html">Find out more about me</a></div>
+					<!--//bio-->
+					<ul class="social-list list-inline py-3 mx-auto">
+						<li class="list-inline-item"><a href="#"><i class="fab fa-instagram fa-fw"></i></a></li>
+						<li class="list-inline-item"><a href="https://www.linkedin.com/in/karthi-kn-2976b2194/"><i
+									class="fab fa-linkedin-in fa-fw"></i></a></li>
+						<li class="list-inline-item"><a href="https://github.com/kkeyan931"><i
+									class="fab fa-github-alt fa-fw"></i></a></li>
+
+					</ul>
+					<hr>
+				</div>
+
+				<ul class="navbar-nav flex-column text-left">
+					<li class="nav-item active">
+						<a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span
+								class="sr-only">(current)</span></a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="index.html"><i class="fas fa-bookmark fa-fw mr-2"></i>Blog Post</a>
+					</li>
+
+			</div>
+		</nav>
+	</header>
+
+	<div class="main-wrapper">
+		<section class="cta-section theme-bg-light py-5">
+			<div class="container text-center">
+				<h2 class="heading">Learn Linux</h2>
+				<!-- <div class="intro">Welcome to my blog.</div> -->
+			</div>
+		</section>
+		<section class="blog-list px-3 py-5 p-md-5">
+			<div class="container">
+				<div class="item mb-5">
+					<div class="media">
+						<img class="mr-3 img-fluid post-thumb d-none d-md-flex"
+							src="assets/images/ubuntu-windows-duelBoot/Windows-Ubuntu.jpg" alt="image">
+						<div class="media-body">
+							<h3 class="title mb-1"><a href="installUbuntu.html">How To Install Ubuntu Alongside Windows
+									10</a></h3>
+							<div class="intro">Step by Step guid to Install Ubuntu along side with Windows</div>
+							<a class="more-link" href="installUbuntu.html">Read more &rarr;</a>
+						</div>
+					</div>
+				</div>
+				<div class="item mb-5">
+					<div class="media">
+						<img class="mr-3 img-fluid post-thumb d-none d-md-flex"
+							src="assets/images/bootableUSB/penDrive.jpg" alt="image">
+						<div class="media-body">
+							<h3 class="title mb-1"><a href="bootableUSB.html">How to Create Ubuntu Live USB in
+									Windows</a></h3>
+							<div class="intro">Step by step tutorial to make a Live Bootable USB in Windows by using
+								RUFUS</div>
+							<a class="more-link" href="bootableUSB.html">Read more &rarr;</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="item mb-5">
+					<div class="media">
+						<img class="mr-3 img-fluid post-thumb d-none d-md-flex"
+							src="assets/images/disableSecureBoot/secureBoot.jpg" alt="image">
+						<div class="media-body">
+							<h3 class="title mb-1"><a href="disableSecureBoot.html">How to Disable UEFI Secure Boot in
+									Windows 10
+								</a></h3>
+							<div class="intro">Step by step tutorial to disable secure Boot in windows 10/8</div>
+							<a class="more-link" href="disableSecureBoot.html">Read more &rarr;</a>
+						</div>
+					</div>
+				</div>
+				<div class="item mb-5">
+					<div class="media">
+						<img class="mr-3 img-fluid post-thumb d-none d-md-flex"
+							src="assets/images/disableSecureBoot/uefiFirmware.jpg" alt="image">
+						<div class="media-body">
+							<h3 class="title mb-1"><a href="enterUEFImode.html">Enter UEFI mode in Windows 10</a></h3>
+							<div class="intro">This tutorial shows how to enter into UEFI mode in Windows 10</div>
+							<a class="more-link" href="enterUEFImode.html">Read more &rarr;</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="item mb-5">
+					<div class="media">
+						<img class="mr-3 img-fluid post-thumb d-none d-md-flex"
+							src="assets/images/uninstallApps/cover.png" alt="image">
+						<div class="media-body">
+							<h3 class="title mb-1"><a href="uninstallApps.html">Uninstall Applications in Ubuntu</a>
+							</h3>
+							<div class="intro">Diffrent ways of uninstalling Application in Ubuntu are..</div>
+							<a class="more-link" href="uninstallApps.html">Read more &rarr;</a>
+						</div>
+					</div>
+				</div>
+
+				<div class="item">
+					<div class="media">
+						<img class="mr-3 img-fluid post-thumb d-none d-md-flex" src="assets/images/enableSSH/cover.webp"
+							alt="image">
+						<div class="media-body">
+							<h3 class="title mb-1"><a href="enableSSH.html">Enable SSH in ubuntu</a></h3>
+							<div class="intro">Secure Shell (SSH) is a cryptographic network protocol used for a secure
+								connection between a client and a server.
+							</div>
+							<a class="more-link" href="enableSSH.html">Read more &rarr;</a>
+						</div>
+					</div>
+				</div>
+
+				<nav class="blog-nav nav nav-justified my-5">
+					<a class="nav-link-prev nav-item nav-link d-none rounded-left" href="#">Previous<i
+							class="arrow-prev fas fa-long-arrow-alt-left"></i></a>
+					<a class="nav-link-next nav-item nav-link rounded" href="blog-list.html">Next<i
+							class="arrow-next fas fa-long-arrow-alt-right"></i></a>
+				</nav>
+			</div>
+		</section>
+
+		<footer class="footer text-center py-2 theme-bg-dark">
+
+			<small class="copyright">Designed with <i class="fas fa-heart" style="color: #fb866a;"></i> by
+				Karthik</small>
+
+		</footer>
+
+	</div>
+
+	<div id="config-panel" class="config-panel d-none d-lg-block">
+		<div class="panel-inner">
+			<a id="config-trigger" class="config-trigger config-panel-hide text-center" href="#"><i
+					class="fas fa-cog fa-spin mx-auto" data-fa-transform="down-6"></i></a>
+			<h5 class="panel-title">Choose Colour</h5>
+			<ul id="color-options" class="list-inline mb-0">
+				<li class="theme-1 active list-inline-item"><a data-style="assets/css/theme-1.css" href="#"></a></li>
+				<li class="theme-2  list-inline-item"><a data-style="assets/css/theme-2.css" href="#"></a></li>
+				<li class="theme-3  list-inline-item"><a data-style="assets/css/theme-3.css" href="#"></a></li>
+				<li class="theme-4  list-inline-item"><a data-style="assets/css/theme-4.css" href="#"></a></li>
+				<li class="theme-5  list-inline-item"><a data-style="assets/css/theme-5.css" href="#"></a></li>
+				<li class="theme-6  list-inline-item"><a data-style="assets/css/theme-6.css" href="#"></a></li>
+				<li class="theme-7  list-inline-item"><a data-style="assets/css/theme-7.css" href="#"></a></li>
+				<li class="theme-8  list-inline-item"><a data-style="assets/css/theme-8.css" href="#"></a></li>
+			</ul>
+			<a id="config-close" class="close" href="#"><i class="fa fa-times-circle"></i></a>
+		</div>
+		<!--//panel-inner-->
+	</div>
+	<!--//configure-panel-->
+
+
+
+	<!-- Javascript -->
+	<script src="assets/plugins/jquery-3.3.1.min.js"></script>
+	<script src="assets/plugins/popper.min.js"></script>
+	<script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+
+	<script src="assets/js/demo/style-switcher.js"></script>
+
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="/__/firebase/8.7.1/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		 https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="/__/firebase/8.7.1/firebase-analytics.js"></script>
+
+	<!-- Initialize Firebase -->
+	<script src="/__/firebase/init.js"></script>
+
+
+</body>
+
 </html>

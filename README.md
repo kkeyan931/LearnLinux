@@ -1,2 +1,2 @@
 # LearnLinux
- My learn Linux Blog
+learn Linux Blog
